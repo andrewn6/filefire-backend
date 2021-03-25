@@ -1,7 +1,6 @@
 FROM node:12
-WORKDIR /usr/src/dev
 
-COPY package.json .
+WORKDIR /usr/src/dev
 
 RUN npm install --dev --ignore-scripts --prefer-offline 
 
