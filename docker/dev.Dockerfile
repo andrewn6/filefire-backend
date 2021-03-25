@@ -3,7 +3,7 @@ WORKDIR /usr/src/dev
 
 COPY package.json .
 
-RUN npm install --production --ignore-scripts --prefer-offline 
+RUN npm install --dev --ignore-scripts --prefer-offline 
 
 EXPOSE 8082
 
