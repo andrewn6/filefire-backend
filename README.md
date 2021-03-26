@@ -14,3 +14,5 @@ Here are just a couple heads up before contributing.
 - Use double quotes (this should already be configurated in the prettier config file.
 
 > Note: Make sure to read CONTRIBUTING.md before opening a pull request for some more detailed info :D
+
+*A work in progress by Andrew Nijmeh.*
