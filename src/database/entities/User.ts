@@ -1,7 +1,5 @@
 import {Entity, Column, BaseEntity, PrimaryGeneratedColumn } from 'typeorm'
-
-
-
+import { IImageMiddlewareSettings } from '../../img/utils'
 
 @Entity()
 export class User extends BaseEntity {
@@ -149,4 +147,50 @@ export class User extends BaseEntity {
   @Column({ default: '#1070ca' })
   embedColor: string
 
+  serialize() {
+    return {
+      id: this.id,
+      email: this.email,
+      password: this.password,
+      emailVerified: this.emailVerified,
+      registrationDate: this.registrationDate,
+      lastLogin: this.lastLogin,
+      uploadKey: this.uploadKey,
+      apiKey: this.apiKey,
+      registrationIp: this.registrationIp,
+      usedIps: this.usedIps,
+      administrator: this.administrator,
+      mailAcess: this.mailAcess,
+      mailAccessExpires: this.mailAccessExpires,
+      mailAccountCreated: this.mailAccountCreated,
+      mailAliasLimit: this.mailAliasLimit,
+      imageCount: this.imageCount,
+      deactivated: this.deactivated,
+   
+      settings_apiIpSecurity: this.settings_apiIpSecurity,
+      settings_imageMiddleware: this.settings_imageMiddleware,
+      settings_randomDomains: this.settings_randomDomains,
+      settings_secureURLs: this.settings_secureURLs,
+      settings_invisibleShortURLs: this.settings_invisibleShortURLs,
+      settings_ipSecurity: this.settings_ipSecurity,
+    }
+  }
+}
+
+
+declare global {
+  namespace Express {
+    interface Request {
+      user: User,
+      loggedIn: boolean,
+      realIp: string,
+      flash: (clazz: string, message: string) => void
+    }
+  }
+  namespace SocketIO {
+    interface Socket {
+      user: User,
+      loggedIn: boolean;
+    }
+  }
 }
