@@ -27,7 +27,7 @@ export class User extends BaseEntity {
   emailVerified: boolean;
 
   @Column()
-  emailVerficationToken: string;
+  emailVerificationToken: string;
 
   @Column()
   lowercaseUsername: string;
@@ -39,7 +39,7 @@ export class User extends BaseEntity {
   uploadKey: string;
 
   @Column({
-    nullable: true,
+  	nullable: true,
   })
   apiKey?: string;
 
@@ -47,7 +47,7 @@ export class User extends BaseEntity {
   registrationIp: string;
 
   @Column('text', {
-    array: true,
+  	array: true,
   })
   usedIps: string[];
 
@@ -59,7 +59,7 @@ export class User extends BaseEntity {
   @Column({
     default: false,
   })
-  mailAcess: boolean;
+  mailAccess: boolean;
 
   @Column({
     type: 'timestamp',
@@ -80,21 +80,21 @@ export class User extends BaseEntity {
   @Column({
     default: 0,
   })
-  imageCount: number
+  imageCount: number;
 
   @Column({
     default: true,
   })
-  settings_apiIpSecurity: boolean
+  settings_apiIpSecurity: boolean;
 
   @Column({
     default: false,
   })
-  settings_imageMiddleware: boolean
+  settings_imageMiddleware: boolean;
 
   @Column('text', {
-    array: true,
-    default: '{}',
+  	array: true,
+  	default: '{}',
   })
   settings_randomDomains: string[]
 
@@ -110,7 +110,7 @@ export class User extends BaseEntity {
   @Column('json', {
     default: { middleware: [] },
   })
-  imageMiddleware: IImageMiddlewareSettings
+  imageMiddleware: IImageMiddlewareSettings;
 
   @Column({ default: false })
   limited: boolean
@@ -120,6 +120,22 @@ export class User extends BaseEntity {
 
   @Column({ default: false })
   deactivated: boolean
+
+  @Column({ default: false })
+  embed: boolean
+
+  @Column({
+    default: "",
+  })
+  embedTitle: string
+
+  @Column({
+    default: "",
+  })
+  embedDescription: string
+
+  @Column({ default: "#000000" })
+  embedColor: string
 
   serialize() {
     return {
@@ -134,10 +150,11 @@ export class User extends BaseEntity {
       registrationIp: this.registrationIp,
       usedIps: this.usedIps,
       administrator: this.administrator,
-      mailAcess: this.mailAcess,
+      mailAccess: this.mailAccess,
       mailAccessExpires: this.mailAccessExpires,
       mailAccountCreated: this.mailAccountCreated,
       mailAliasLimit: this.mailAliasLimit,
+      emailVerificationToken: this.emailVerificationToken,
       imageCount: this.imageCount,
       deactivated: this.deactivated,
    
