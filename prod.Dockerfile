@@ -1,7 +1,7 @@
 FROM node:12
 WORKDIR /usr/src/dev
 
-COPY package.json .
+COPY package.json ./
 
 RUN npm install --production --ignore-scripts --prefer-offline 
 

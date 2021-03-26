@@ -13,6 +13,8 @@ services:
 
     ports:
         - '5432:5432'
+    networks:
+      - network-a42
 
   backend:
         build:
@@ -26,3 +28,13 @@ services:
             - db
         deploy: 
             replicas: 6
+        
+        networks:
+          - network-a42
+
+networks:
+ default:
+  external:
+    name: network-a42
+
+    
