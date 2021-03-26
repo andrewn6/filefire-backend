@@ -2,3 +2,4 @@
 /dist
 /config
 ./pgdata:/var/lib/postgressql/data
+*.env
