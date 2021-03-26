@@ -15,7 +15,7 @@ export class User extends BaseEntity {
   @Column()
   username: string;
 
-  @Column("Registration date")
+  @Column()
   registrationDate: Date;
 
   @Column("timestamp", {
@@ -144,7 +144,7 @@ export class User extends BaseEntity {
   })
   embedDescription: string
 
-  @Column({ default: '#1070ca' })
+  @Column({ default: '#000000' })
   embedColor: string
 
   serialize() {
