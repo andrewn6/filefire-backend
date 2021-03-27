@@ -1,4 +1,4 @@
-### Filefire, An efficent free file uploader.
+### Filefire, An efficient free file uploader.
 
 ## Features
 
