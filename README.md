@@ -8,11 +8,10 @@
 - And lasty it's completely free!
 
 ## Contributing
-Here are just a couple heads up before contributing.
+Pull requests are appreciated, Feel free to fork the repository and make your edits there.
 
-- Use semicolons.
-- Use double quotes (this should already be configurated in the prettier config file.
-
-> Note: Make sure to read CONTRIBUTING.md before opening a pull request for some more detailed info :D
+- Make sure you have prettier up to date/installed
+- Use semi colons
+- Use double quotes
 
 *A work in progress by Andrew Nijmeh.*
